@@ -1,0 +1,34 @@
+{
+    "name": "ionscript/ions-mail",
+    "description": "provides generalized functionality to compose and send both text and MIME-compliant multipart e-mail messages",
+    "license": "GPL-3.0+",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Serge Shportko",
+            "email": "ionscript.inc@gmail.com"
+        }
+    ],
+    "keywords": [
+        "ions",
+        "mail"
+    ],
+    "homepage": "https://github.com/ionscript/ions-mail",
+    "autoload": {
+        "psr-4": {
+            "Ions\\Mail\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^5.5 || ^7.0",
+        "ionscript/ions-std": "master"
+    },
+    "require-dev": {},
+    "autoload-dev": {},
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/ionscript/ions-std.git"
+        }
+    ]
+}
