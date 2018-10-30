@@ -288,7 +288,7 @@ class Message
         }
         $header = $headers->get('subject');
 
-        return $header->getFieldValue();
+        return $header->getValue();
     }
 
     /**

@@ -38,16 +38,16 @@ class GenericMultiHeader extends GenericHeader implements MultipleHeadersInterfa
      */
     public function toStringMultipleHeaders(array $headers)
     {
-        $name = $this->getFieldName();
+        $name = $this->getName();
 
-        $values = [$this->getFieldValue(HeaderInterface::FORMAT_ENCODED)];
+        $values = [$this->getValue(HeaderInterface::FORMAT_ENCODED)];
 
         foreach ($headers as $header) {
             if (!$header instanceof static) {
                 throw new \InvalidArgumentException('This method toStringMultipleHeaders was expecting an array of headers of the same type');
             }
 
-            $values[] = $header->getFieldValue(HeaderInterface::FORMAT_ENCODED);
+            $values[] = $header->getValue(HeaderInterface::FORMAT_ENCODED);
         }
 
         return $name . ': ' . implode(',', $values);

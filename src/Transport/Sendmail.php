@@ -86,7 +86,7 @@ class Sendmail implements TransportInterface
         }
 
         if (!$this->isWindowsOs()) {
-            return $to->getFieldValue(HeaderInterface::FORMAT_ENCODED);
+            return $to->getValue(HeaderInterface::FORMAT_ENCODED);
         }
 
         $addresses = [];
@@ -105,7 +105,7 @@ class Sendmail implements TransportInterface
             return;
         }
         $header = $headers->get('subject');
-        return $header->getFieldValue(HeaderInterface::FORMAT_ENCODED);
+        return $header->getValue(HeaderInterface::FORMAT_ENCODED);
     }
 
     protected function prepareBody(Mail\Message $message)

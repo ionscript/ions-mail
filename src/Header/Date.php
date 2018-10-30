@@ -47,7 +47,7 @@ class Date implements HeaderInterface
     /**
      * @return string
      */
-    public function getFieldName()
+    public function getName()
     {
         return 'Date';
     }
@@ -56,7 +56,7 @@ class Date implements HeaderInterface
      * @param bool $format
      * @return mixed
      */
-    public function getFieldValue($format = HeaderInterface::FORMAT_RAW)
+    public function getValue($format = HeaderInterface::FORMAT_RAW)
     {
         return $this->value;
     }
@@ -83,6 +83,6 @@ class Date implements HeaderInterface
      */
     public function toString()
     {
-        return 'Date: ' . $this->getFieldValue();
+        return 'Date: ' . $this->getValue();
     }
 }

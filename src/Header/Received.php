@@ -51,7 +51,7 @@ class Received implements HeaderInterface, MultipleHeadersInterface
     /**
      * @return string
      */
-    public function getFieldName()
+    public function getName()
     {
         return 'Received';
     }
@@ -60,7 +60,7 @@ class Received implements HeaderInterface, MultipleHeadersInterface
      * @param bool $format
      * @return string
      */
-    public function getFieldValue($format = HeaderInterface::FORMAT_RAW)
+    public function getValue($format = HeaderInterface::FORMAT_RAW)
     {
         return $this->value;
     }
@@ -87,7 +87,7 @@ class Received implements HeaderInterface, MultipleHeadersInterface
      */
     public function toString()
     {
-        return 'Received: ' . $this->getFieldValue();
+        return 'Received: ' . $this->getValue();
     }
 
     /**

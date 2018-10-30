@@ -38,7 +38,7 @@ class MessageId implements HeaderInterface
     /**
      * @return string
      */
-    public function getFieldName()
+    public function getName()
     {
         return 'Message-ID';
     }
@@ -47,7 +47,7 @@ class MessageId implements HeaderInterface
      * @param bool $format
      * @return mixed
      */
-    public function getFieldValue($format = HeaderInterface::FORMAT_RAW)
+    public function getValue($format = HeaderInterface::FORMAT_RAW)
     {
         return $this->messageId;
     }
@@ -74,7 +74,7 @@ class MessageId implements HeaderInterface
      */
     public function toString()
     {
-        return 'Message-ID: ' . $this->getFieldValue();
+        return 'Message-ID: ' . $this->getValue();
     }
 
     /**

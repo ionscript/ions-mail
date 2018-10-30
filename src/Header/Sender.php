@@ -48,7 +48,7 @@ class Sender implements HeaderInterface
     /**
      * @return string
      */
-    public function getFieldName()
+    public function getName()
     {
         return 'Sender';
     }
@@ -57,7 +57,7 @@ class Sender implements HeaderInterface
      * @param bool $format
      * @return string
      */
-    public function getFieldValue($format = HeaderInterface::FORMAT_RAW)
+    public function getValue($format = HeaderInterface::FORMAT_RAW)
     {
         if (!$this->address instanceof Mail\AddressInterface) {
             return '';
@@ -96,7 +96,7 @@ class Sender implements HeaderInterface
     public function getEncoding()
     {
         if (!$this->encoding) {
-            $this->encoding = Mail\Message\Mime::isPrintable($this->getFieldValue(HeaderInterface::FORMAT_RAW)) ? 'ASCII' : 'UTF-8';
+            $this->encoding = Mail\Message\Mime::isPrintable($this->getValue(HeaderInterface::FORMAT_RAW)) ? 'ASCII' : 'UTF-8';
         }
 
         return $this->encoding;
@@ -107,7 +107,7 @@ class Sender implements HeaderInterface
      */
     public function toString()
     {
-        return 'Sender: ' . $this->getFieldValue(HeaderInterface::FORMAT_ENCODED);
+        return 'Sender: ' . $this->getValue(HeaderInterface::FORMAT_ENCODED);
     }
 
     /**

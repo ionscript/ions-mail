@@ -78,7 +78,7 @@ abstract class AbstractAddressList implements HeaderInterface
     /**
      * @return mixed
      */
-    public function getFieldName()
+    public function getName()
     {
         return $this->fieldName;
     }
@@ -99,7 +99,7 @@ abstract class AbstractAddressList implements HeaderInterface
      * @param bool $format
      * @return string
      */
-    public function getFieldValue($format = HeaderInterface::FORMAT_RAW)
+    public function getValue($format = HeaderInterface::FORMAT_RAW)
     {
         $emails = [];
         $encoding = $this->getEncoding();
@@ -178,8 +178,8 @@ abstract class AbstractAddressList implements HeaderInterface
      */
     public function toString()
     {
-        $name = $this->getFieldName();
-        $value = $this->getFieldValue(HeaderInterface::FORMAT_ENCODED);
+        $name = $this->getName();
+        $value = $this->getValue(HeaderInterface::FORMAT_ENCODED);
         return (empty($value)) ? '' : sprintf('%s: %s', $name, $value);
     }
 

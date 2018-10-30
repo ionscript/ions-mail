@@ -54,7 +54,7 @@ class ContentTransferEncoding implements HeaderInterface
     /**
      * @return string
      */
-    public function getFieldName()
+    public function getName()
     {
         return 'Content-Transfer-Encoding';
     }
@@ -63,7 +63,7 @@ class ContentTransferEncoding implements HeaderInterface
      * @param bool $format
      * @return mixed
      */
-    public function getFieldValue($format = HeaderInterface::FORMAT_RAW)
+    public function getValue($format = HeaderInterface::FORMAT_RAW)
     {
         return $this->transferEncoding;
     }
@@ -90,7 +90,7 @@ class ContentTransferEncoding implements HeaderInterface
      */
     public function toString()
     {
-        return 'Content-Transfer-Encoding: ' . $this->getFieldValue();
+        return 'Content-Transfer-Encoding: ' . $this->getValue();
     }
 
     /**

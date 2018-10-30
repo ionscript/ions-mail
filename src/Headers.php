@@ -157,7 +157,7 @@ class Headers implements Countable, Iterator
      */
     public function addHeader(Header\HeaderInterface $header)
     {
-        $key = $this->normalizeFieldName($header->getFieldName());
+        $key = $this->normalizeFieldName($header->getName());
         $this->headersKeys[] = $key;
         $this->headers[] = $header;
         if ($this->getEncoding() !== 'ASCII') {
@@ -311,13 +311,13 @@ class Headers implements Countable, Iterator
         $headers = [];
         foreach ($this->headers as $header) {
             if ($header instanceof Header\MultipleHeadersInterface) {
-                $name = $header->getFieldName();
+                $name = $header->getName();
                 if (!isset($headers[$name])) {
                     $headers[$name] = [];
                 }
-                $headers[$name][] = $header->getFieldValue($format);
+                $headers[$name][] = $header->getValue($format);
             } else {
-                $headers[$header->getFieldName()] = $header->getFieldValue($format);
+                $headers[$header->getName()] = $header->getValue($format);
             }
         }
         return $headers;

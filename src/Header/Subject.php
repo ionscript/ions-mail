@@ -39,7 +39,7 @@ class Subject implements UnstructuredInterface
     /**
      * @return string
      */
-    public function getFieldName()
+    public function getName()
     {
         return 'Subject';
     }
@@ -48,7 +48,7 @@ class Subject implements UnstructuredInterface
      * @param bool $format
      * @return string
      */
-    public function getFieldValue($format = HeaderInterface::FORMAT_RAW)
+    public function getValue($format = HeaderInterface::FORMAT_RAW)
     {
         if (HeaderInterface::FORMAT_ENCODED === $format) {
             return HeaderWrap::wrap($this->subject, $this);
@@ -98,6 +98,6 @@ class Subject implements UnstructuredInterface
      */
     public function toString()
     {
-        return 'Subject: ' . $this->getFieldValue(HeaderInterface::FORMAT_ENCODED);
+        return 'Subject: ' . $this->getValue(HeaderInterface::FORMAT_ENCODED);
     }
 }

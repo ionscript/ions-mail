@@ -57,7 +57,7 @@ class ContentType implements UnstructuredInterface
     /**
      * @return string
      */
-    public function getFieldName()
+    public function getName()
     {
         return 'Content-Type';
     }
@@ -66,7 +66,7 @@ class ContentType implements UnstructuredInterface
      * @param bool $format
      * @return string
      */
-    public function getFieldValue($format = HeaderInterface::FORMAT_RAW)
+    public function getValue($format = HeaderInterface::FORMAT_RAW)
     {
         $prepared = $this->type;
 
@@ -111,7 +111,7 @@ class ContentType implements UnstructuredInterface
      */
     public function toString()
     {
-        return 'Content-Type: ' . $this->getFieldValue(HeaderInterface::FORMAT_ENCODED);
+        return 'Content-Type: ' . $this->getValue(HeaderInterface::FORMAT_ENCODED);
     }
 
     /**

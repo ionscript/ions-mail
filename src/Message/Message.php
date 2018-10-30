@@ -177,8 +177,8 @@ class Message
         foreach ($parts as $part) {
             $properties = [];
             foreach ($part['header'] as $header) {
-                $fieldName = $header->getFieldName();
-                $fieldValue = $header->getFieldValue();
+                $fieldName = $header->getName();
+                $fieldValue = $header->getValue();
                 switch (strtolower($fieldName)) {
                     case 'content-type':
                         $properties['type'] = $fieldValue;

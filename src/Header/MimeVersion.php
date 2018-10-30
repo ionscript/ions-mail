@@ -35,7 +35,7 @@ class MimeVersion implements HeaderInterface
     /**
      * @return string
      */
-    public function getFieldName()
+    public function getName()
     {
         return 'MIME-Version';
     }
@@ -44,7 +44,7 @@ class MimeVersion implements HeaderInterface
      * @param bool $format
      * @return string
      */
-    public function getFieldValue($format = HeaderInterface::FORMAT_RAW)
+    public function getValue($format = HeaderInterface::FORMAT_RAW)
     {
         return $this->version;
     }
@@ -71,7 +71,7 @@ class MimeVersion implements HeaderInterface
      */
     public function toString()
     {
-        return 'MIME-Version: ' . $this->getFieldValue();
+        return 'MIME-Version: ' . $this->getValue();
     }
 
     /**

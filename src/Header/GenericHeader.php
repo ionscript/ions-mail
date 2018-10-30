@@ -67,10 +67,10 @@ class GenericHeader implements HeaderInterface, UnstructuredInterface
     public function __construct($fieldName = null, $fieldValue = null)
     {
         if ($fieldName) {
-            $this->setFieldName($fieldName);
+            $this->setName($fieldName);
         }
         if ($fieldValue !== null) {
-            $this->setFieldValue($fieldValue);
+            $this->setValue($fieldValue);
         }
     }
 
@@ -95,7 +95,7 @@ class GenericHeader implements HeaderInterface, UnstructuredInterface
     /**
      * @return null
      */
-    public function getFieldName()
+    public function getName()
     {
         return $this->fieldName;
     }
@@ -120,7 +120,7 @@ class GenericHeader implements HeaderInterface, UnstructuredInterface
      * @param bool $format
      * @return null|string
      */
-    public function getFieldValue($format = HeaderInterface::FORMAT_RAW)
+    public function getValue($format = HeaderInterface::FORMAT_RAW)
     {
         if (HeaderInterface::FORMAT_ENCODED === $format) {
             return HeaderWrap::wrap($this->fieldValue, $this);
@@ -155,11 +155,11 @@ class GenericHeader implements HeaderInterface, UnstructuredInterface
      */
     public function toString()
     {
-        $name = $this->getFieldName();
+        $name = $this->getName();
         if (empty($name)) {
             throw new \RuntimeException('Header name is not set, use setFieldName()');
         }
-        $value = $this->getFieldValue(HeaderInterface::FORMAT_ENCODED);
+        $value = $this->getValue(HeaderInterface::FORMAT_ENCODED);
         return $name . ': ' . $value;
     }
 }

@@ -20,13 +20,13 @@ interface HeaderInterface
     /**
      * @return mixed
      */
-    public function getFieldName();
+    public function getName();
 
     /**
      * @param bool $format
      * @return mixed
      */
-    public function getFieldValue($format = HeaderInterface::FORMAT_RAW);
+    public function getValue($format = HeaderInterface::FORMAT_RAW);
 
     /**
      * @param $encoding
